@@ -14,7 +14,16 @@ body {
   background-color: hsl(217, 54%, 11%);
 }
 
-.container {
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+.main {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -30,10 +39,35 @@ body {
   margin-bottom: 3rem;
 }
 
+.card-header {
+  width: 27.8rem;
+  height: 27.8rem;
+  border-radius: 0.8rem;
+  background-color: hsl(178, 100%, 50%);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.card-header:hover .card-img {
+  opacity: 0.5;
+}
+
+.card-header:hover .card-icon-view {
+  opacity: 1;
+}
+
 .card-img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 3rem;
+}
+
+.card-icon-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 .card-title {
@@ -49,7 +83,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.card-section-price-time {
+.card-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,8 +93,8 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.card-section-price,
-.card-section-time {
+.card-price,
+.card-time {
   display: flex;
   gap: 0.8rem;
 }
@@ -70,7 +104,7 @@ body {
   font-weight: 400;
 }
 
-.card-section-author {
+.card-footer {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -86,4 +120,10 @@ body {
 
 .card-author-name {
   color: #fff;
+}
+
+@media (min-width: 375px) {
+  .card {
+    max-width: 35rem;
+  }
 }
